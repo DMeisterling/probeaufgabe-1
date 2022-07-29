@@ -38,6 +38,12 @@ Denke dran, komplizierte Stellen zu kommentieren, damit wir verstehen können, w
 Insgesamt hast Du für die Bearbeitung der Aufgabe 3 Tage Zeit. Erfahrene EntwicklerInnen brauchen dafür ca 4h.
 Wir wünschen Dir viel Spaß und freuen uns auf Dich :)
 
+### Abgabe
+
+Am einfachsten wäre es für uns, wenn Du uns Deine Abgabe über GitHub zur Verfügung stellst.
+Erstelle dafür einfach ein Repository mit einem initialen Commit, der die Aufgabe enthält. Die Lösung der Aufgaben kannst Du dann einfach in einem oder mehreren Commits pushen.
+Solltest Du dabei Hilfe brauchen, wende Dich gerne an uns, dann finden wir gemeinsam eine Lösung.
+
 ## Weiterführende Links
 * Warum Fhir? https://hl7.de/themen/hl7-fhir-mobile-kommunikation-und-mehr/warum-fhir/
 * Dokumentation Patient: http://www.hl7.org/fhir/patient.html
