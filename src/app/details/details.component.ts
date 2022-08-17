@@ -1,3 +1,4 @@
+import { getLocaleDateFormat } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -100,4 +101,30 @@ export class DetailsComponent {
         break;
     }
   }
+
+  //function to check if patient has deceased boolean or deceasedDateTime set
+  // if yes return 'deceased' css class, if no return 'patientList' css class
+  checkDeceased(record: any): "deceased" | "patientList" {
+    if (
+      record.deceasedBoolean !== undefined &&
+      record.deceasedBoolean == true
+    ) {
+      return 'deceased';
+    } else if (
+      record.deceasedDateTime !== undefined
+      ) {
+      return 'deceased';
+    } else {
+      return 'patientList';
+    }
+  }
+  //function to process date string to more readable state and return it
+  getDate(data: any) {
+    console.log(data)
+    let date = data
+    .replace(/T/, ' ')
+    .replace(/\+.*/, '')
+    return date;
+  }
+
 }

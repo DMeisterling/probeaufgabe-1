@@ -3,7 +3,7 @@
   <mat-tab label="Patient">
     <ul>
       <li *ngIf="(patientDetails$ | async) as record"
-        class="patientList">
+      [ngClass]="checkDeceased(record)">
         <ul>
           <!-- check if given name is empty, if yes, use add. text to fill-->
           <div *ngIf="record.name[0].given">
@@ -24,6 +24,9 @@
             Geschlecht: {{ record.gender }}</ul>
           <ul *ngIf="record._gender">
             Geschlecht-Zusatz: {{ checkGender(record._gender) }}
+          </ul>
+          <ul *ngIf="record.deceasedDateTime">
+            Sterbedatum: {{ getDate(record.deceasedDateTime) }}
           </ul>
         <details *ngIf="record.contact">
                 <summary>Kontakte: </summary>
@@ -52,7 +55,6 @@
                 </div>
                 </li>
         </details>
-        <ul *ngIf=""></ul>
       </li>
     </ul>
   </mat-tab>

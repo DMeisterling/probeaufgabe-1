@@ -5,7 +5,7 @@
          additional name info, familyname and birthDate-->
     <ul>
       <li *ngFor="let record of (patients$ | async).entry"
-        class="patientList">
+        [ngClass]="checkDeceased(record)">
         <ul>
           <div *ngIf="record.resource?.name[0].given">
             Name: {{ record.resource?.name[0].given }}
