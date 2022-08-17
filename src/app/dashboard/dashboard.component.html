@@ -1,6 +1,8 @@
 <mat-toolbar color="primary">Patient Management System</mat-toolbar>
 <mat-tab-group class="patients">
   <mat-tab label="Patients">
+    <!-- make list of patients and display names,
+         additional name info, familyname and birthDate-->
     <ul>
       <li *ngFor="let record of (patients$ | async).entry" class="patientList">
         <ul>Name(n): {{ record.resource?.name[0].given  }} </ul>

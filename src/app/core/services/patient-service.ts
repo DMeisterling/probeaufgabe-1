@@ -13,9 +13,8 @@ export class PatientService {
 
   get(count: number = 50): Observable<any[]> {
     const url = `${PatientService.url}?${PatientService.defaultMimeType}&_count=${count}&name=`;
+    //make GET request to api and receive 50 entries
     return this.http.get<any[]>(url)
-    //.subscribe(val => console.log(val.entry));
-    //return of('TODO: load patients...');
   }
 
 
