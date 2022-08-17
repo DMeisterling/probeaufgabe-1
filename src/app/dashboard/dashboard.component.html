@@ -1,14 +1,26 @@
-<mat-toolbar color="primary">Patient Management System</mat-toolbar>
+<mat-toolbar color="primary"><a [routerLink]="['']">Patient Management System</a></mat-toolbar>
 <mat-tab-group class="patients">
   <mat-tab label="Patients">
     <!-- make list of patients and display names,
          additional name info, familyname and birthDate-->
     <ul>
-      <li *ngFor="let record of (patients$ | async).entry" class="patientList">
-        <ul>Name(n): {{ record.resource?.name[0].given  }} </ul>
-        <ul>Zusatz: {{record.resource?.name[0].text }} </ul>
+      <li *ngFor="let record of (patients$ | async).entry"
+        class="patientList">
+        <ul>
+          <div *ngIf="record.resource?.name[0].given">
+            Name: {{ record.resource?.name[0].given }}
+            <li *ngIf="record.resource?.name[0].text">
+              Zusatz: {{ record.resource?.name[0].text }}
+            </li>
+          </div>
+          <div *ngIf="!record.resource?.name[0].given">
+            Name: {{ record.resource?.name[0].text }}
+          </div>
+        </ul>
         <ul>Nachname: {{ record.resource?.name[0].family }}</ul>
         <ul>Geburtsdatum: {{record.resource?.birthDate}}</ul>
+        <!-- Details Button -->
+        <button (click)="onSelect(record.resource)" class="button-39" role="button">Details</button>
       </li>
     </ul>
   </mat-tab>

@@ -3,15 +3,65 @@
 }
 
 .patientList {
-  padding-left: 2px;
-  margin:2px;
+  width: 20%;
+  margin:auto;
+  margin-bottom: 4px;
   border: 2px solid grey;
   border-radius: 20px;
-  background-color: rgba(233, 241, 244, 0.902);;
+  background-color: rgba(233, 241, 244, 0.902);
 }
+
+//Details-Button
+.button-39 {
+  margin-bottom: 2px;
+  background-color:   rgb(235, 239, 244);
+  border: 1px solid rgb(209,213,219);
+  border-radius: .5rem;
+  box-sizing: border-box;
+  color: #111827;
+  font-size: .875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: .75rem 1rem;
+  text-align: center;
+  text-decoration: none #D1D5DB solid;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-39:hover {
+  background-color: rgba(207, 223, 229, 0.902);
+}
+
+.button-39:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.button-39:focus-visible {
+  box-shadow: none;
+}
+
 
 ul {
   padding: 5px;
   text-align: center;
   position: relative;
+  margin: 2px;
 }
+
+li {
+  padding: 5px;
+  text-align: center;
+  position: relative;
+  list-style-type: none;
+}
+
+a:visited {
+  text-decoration: none;
+  color: white;
+ }

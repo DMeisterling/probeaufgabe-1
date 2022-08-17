@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { MaterialModule } from "../ui/material.module";
-import { DashboardComponent } from "./dashboard.component";
+import { DetailsComponent } from './details.component';
 import { CoreModule } from "../core/core-module";
 import { CommonModule } from "@angular/common";
 import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
-    DashboardComponent
+    DetailsComponent
   ],
   imports: [
     CommonModule,
@@ -16,4 +16,4 @@ import { RouterModule } from '@angular/router';
     RouterModule
   ]
 })
-export class DashboardModule { }
+export class DetailsModule { }

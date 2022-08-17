@@ -1,0 +1,35 @@
+.patients {
+  background-color: rgba(238, 246, 248, 0.902);
+}
+
+.patientList {
+  width: 30%;
+  margin:auto;
+  margin-bottom: 4px;
+  border: 2px solid grey;
+  border-radius: 20px;
+  background-color: rgba(233, 241, 244, 0.902);
+}
+
+ul {
+  padding: 5px;
+  text-align: center;
+  position: relative;
+  margin: 2px;
+}
+
+li {
+  padding: 5px;
+  text-align: center;
+  position: relative;
+  list-style-type: none;
+}
+
+.contacts {
+  border-top: 2px solid grey;
+}
+
+a:visited {
+  text-decoration: none;
+  color: white;
+ }

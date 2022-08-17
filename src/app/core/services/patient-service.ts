@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Patients } from 'src/app/patient';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class PatientService {
@@ -11,16 +9,15 @@ export class PatientService {
   private static readonly url = 'https://wildfhir4.aegis.net/fhir4-0-1/Patient';
   private static readonly defaultMimeType = '_format=application/fhir+json';
 
+    //make GET request to api and receive 50 entries
   get(count: number = 50): Observable<any[]> {
     const url = `${PatientService.url}?${PatientService.defaultMimeType}&_count=${count}&name=`;
-    //make GET request to api and receive 50 entries
     return this.http.get<any[]>(url)
   }
 
-
-  getById(id: string): Observable<string> {
+    //make GET request with specific id to retrieve data from 1 entry
+  getById(id: string): Observable<any[]> {
     const url = `${PatientService.url}/${id}?${PatientService.defaultMimeType}`;
-    return of(url);
-    //return of('get patient by id...');
+    return this.http.get<any[]>(url)
   }
 }
