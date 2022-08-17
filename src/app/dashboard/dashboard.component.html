@@ -1,5 +1,14 @@
 <mat-toolbar color="primary">Patient Management System</mat-toolbar>
-<mat-tab-group>
-  <mat-tab label="Patients">{{ patients$ | async }}</mat-tab>
+<mat-tab-group class="patients">
+  <mat-tab label="Patients">
+    <ul>
+      <li *ngFor="let record of (patients$ | async).entry" class="patientList">
+        <ul>Name(n): {{ record.resource?.name[0].given  }} </ul>
+        <ul>Zusatz: {{record.resource?.name[0].text }} </ul>
+        <ul>Nachname: {{ record.resource?.name[0].family }}</ul>
+        <ul>Geburtsdatum: {{record.resource?.birthDate}}</ul>
+      </li>
+    </ul>
+  </mat-tab>
   <mat-tab label="Practitioner"></mat-tab>
 </mat-tab-group>
