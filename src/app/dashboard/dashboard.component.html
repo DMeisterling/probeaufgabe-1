@@ -4,7 +4,7 @@
     <!-- make list of patients and display names,
          additional name info, familyname and birthDate-->
     <ul>
-      <li *ngFor="let record of (patients$ | async).entry"
+      <li *ngFor="let record of (patients$ | async)?.entry"
         [ngClass]="checkDeceased(record)">
         <ul>
           <div *ngIf="record.resource?.name[0].given">
