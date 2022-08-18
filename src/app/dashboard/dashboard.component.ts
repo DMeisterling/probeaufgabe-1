@@ -18,6 +18,7 @@ export class DashboardComponent {
     // retrieve data from get() function from patient service and write to patients$
     this.patients$ = patientService.get();
   }
+
   // function to navigate to details page of specific id
   onSelect(patient: any) {
     this.router.navigate(['/details', patient.id]);
@@ -25,19 +26,16 @@ export class DashboardComponent {
 
   //function to check if patient has deceased boolean or deceasedDateTime set
   // if yes return 'deceased' css class, if no return 'patientList' css class
-  checkDeceased(record: any): "deceased" | "patientList" {
+  checkDeceased(record: any): 'deceased' | 'patientList' {
     if (
       record.resource.deceasedBoolean !== undefined &&
       record.resource.deceasedBoolean == true
     ) {
       return 'deceased';
-    } else if (
-      record.resource.deceasedDateTime !== undefined
-      ) {
+    } else if (record.resource.deceasedDateTime !== undefined) {
       return 'deceased';
     } else {
       return 'patientList';
     }
   }
 }
-

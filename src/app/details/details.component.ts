@@ -120,7 +120,6 @@ export class DetailsComponent {
   }
   //function to process date string to more readable state and return it
   getDate(data: any) {
-    console.log(data)
     let date = data
     .replace(/T/, ' ')
     .replace(/\+.*/, '')

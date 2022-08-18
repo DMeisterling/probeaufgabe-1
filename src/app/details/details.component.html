@@ -6,17 +6,17 @@
       [ngClass]="checkDeceased(record)">
         <ul>
           <!-- check if given name is empty, if yes, use add. text to fill-->
-          <div *ngIf="record.name[0].given">
-            Name: {{ record.name[0].given }}
-            <li *ngIf="record.name[0].text">
-            Zusatz: {{ record.name[0].text }}
+          <div *ngIf="record.name[0]?.given">
+            Name: {{ record.name[0]?.given }}
+            <li *ngIf="record.name[0]?.text">
+            Zusatz: {{ record.name[0]?.text }}
             </li>
           </div>
-          <div *ngIf="!record.name[0].given">
-            Name: {{ record.name[0].text }}
+          <div *ngIf="!record.name[0]?.given">
+            Name: {{ record.name[0]?.text }}
           </div>
         </ul>
-        <ul *ngIf="record.name[0].family">
+        <ul *ngIf="record.name[0]?.family">
           Nachname: {{ record.name[0].family }}</ul>
         <ul *ngIf="record.birthDate">
           Geburtsdatum: {{ record.birthDate }}</ul>
@@ -34,15 +34,15 @@
                 class="contacts">
                 <!-- check if any names can be displayed -->
                 <div *ngIf="contact.name">
-                Nachname: {{ contact.name.family }}
+                Nachname: {{ contact.name?.family }}
                 <div *ngIf="contact.name?.given">
                   Name: {{ contact.name?.given }}
                   <li *ngIf="contact.name?.text">
                   Zusatz: {{ contact.name?.text }}
                   </li>
                 </div>
-                <div *ngIf="!contact.name[0].given">
-                  Name: {{ contact.name[0].text }}
+                <div *ngIf="!contact.name[0]?.given">
+                  Name: {{ contact.name[0]?.text }}
                 </div>
               </div>
               <!-- display organization if available -->
